@@ -1,33 +1,126 @@
 
-h1{
-    font-family: "Bau Bold";
+#headerWrapper{
+    height: 200px;
+    width: 100vw;
+}
+#titleBox{
+    position: relative;
+    width: 367px;
+    height: 100px;
+    left: 10vw;
+    top: 5vh;
+
+    text-align: center;
+    background: #CFF4C9;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    /* Subtle */
+
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
 }
 
-h2{
-    font-family: "Bau Medium";
+#titleHeader{
+    font-family: 'Bau Bold';
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #231F20;
 }
 
-h3{
-    font-family: "Tiempos Headline Semibold";
+#titleDesc{
+    font-family: 'Tiempos Text Italic';
+    font-weight: normal;
+    font-size: 14px;
+    left: 10px;
 }
 
-h4{
-    font-family: "Bau Medium";
+#headerOptions{
+    margin-left: 55%;
+    display: flex;
+    flex-direction: row;
 }
 
-h5{
-    font-family: "Tiempos Headline Regular";
+.headerBox{
+    padding: 2px 8px;
+    margin-left: 4px;
+    margin-right: 4px;
+    background: #F8FFF6;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+
+    font-family: 'Bau Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-h6{
-    font-family: "Bau Medium";
-}
+#helpBox{
+    background: #E27047;
 
+}
 body{
-    font-family: "Tiempos Text Regular";
     background-color: #E0F9FF;
 }
 
-label{
-    font-family: "Tiempos Headline Light";
+a:link, a:visited {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: #231F20;
+}
+
+#introBox{
+    width: 60vw;
+    height: 60vh;
+    margin: auto;
+
+    background: #F8FFF6;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    font-family: 'Bau Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 120%;
+    color: #231F20;
+}
+
+#introText{
+    width: 94%;
+    height: 90%;
+    margin-left: 3%;
+    margin-right: auto;
+    margin-top:5%;
+}
+
+#endingRight{
+    text-align: right;
+    font-size: 36px;
+}
+
+#turqColor{
+    color: #B2C0F3;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #B2C0F3;
+}
+
+#orangeColor{
+    color: #E27047;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #E27047;
+}
+
+#greenColor{
+    color: #CFF4C9;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: #CFF4C9;
 }
