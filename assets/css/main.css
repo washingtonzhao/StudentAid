@@ -1,0 +1,33 @@
+
+h1{
+    font-family: "Bau Bold";
+}
+
+h2{
+    font-family: "Bau Medium";
+}
+
+h3{
+    font-family: "Tiempos Headline Semibold";
+}
+
+h4{
+    font-family: "Bau Medium";
+}
+
+h5{
+    font-family: "Tiempos Headline Regular";
+}
+
+h6{
+    font-family: "Bau Medium";
+}
+
+body{
+    font-family: "Tiempos Text Regular";
+    background-color: #E0F9FF;
+}
+
+label{
+    font-family: "Tiempos Headline Light";
+}
