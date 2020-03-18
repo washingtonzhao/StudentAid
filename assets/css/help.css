@@ -5,8 +5,8 @@
 
 #helpWrapper{
     position: relative;
-    width: 80%;
-    height: 500px;
+    width: 80vw;
+    height: calc(100vh - 150px);
     margin: auto;
 }
 
@@ -14,7 +14,7 @@
     position: absolute;
     width: 570px;
     height: 150px;
-    right: 15%;
+    right: 5%;
     background: #E5A698;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -51,10 +51,10 @@
 
 #mapBox{
     position: absolute;
-    width: 1000px;
-    height: 618px;
-    top: 142px;
-    left: 250px;
+    width: 70%;
+    height: 75%;
+    top: 17%;
+    left: 15%;
     background: #F8FFF6;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -94,14 +94,16 @@
 }
 
 #map{
+    width: 80%;
+    height: 50%;
     margin-left: 3.5%;
     margin-bottom: 5%;
 }
 
 #smile{
     position: absolute;
-    right: 13%;
-    top: 25%;
+    right: -5%;
+    bottom: -8%;
 }
 
 #indoors{
@@ -115,3 +117,21 @@
     right: -10%;
     bottom: 3%;
 }
+
+@-webkit-keyframes rotate {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to { 
+      -webkit-transform: rotate(360deg);
+    }
+}
+  
+#smile {
+    -webkit-animation-name:            rotate; 
+    -webkit-animation-duration:        10s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+
