@@ -95,9 +95,14 @@
 
 #map{
     width: 80%;
-    height: 50%;
+    height: 85%;
     margin-left: 3.5%;
     margin-bottom: 5%;
+}
+
+#map svg{
+    width: 90%;
+    height: 90%;
 }
 
 #smile{
