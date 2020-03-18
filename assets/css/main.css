@@ -78,7 +78,7 @@ a:link, a:visited {
 
 #introBox{
     width: 60vw;
-    height: 60vh;
+    height: 70vh;
     margin: auto;
 
     background: #F8FFF6;
@@ -96,8 +96,6 @@ a:link, a:visited {
 }
 
 #introText{
-    width: 94%;
-    height: 90%;
     margin-left: 3%;
     margin-right: auto;
     margin-top:5%;
