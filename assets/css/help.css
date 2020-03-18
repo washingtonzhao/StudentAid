@@ -27,6 +27,7 @@
     font-size: 14px;
     line-height: 152.5%;
     color: #231F20;
+    padding: 2px;
 }
 
 #guideHeader{
@@ -40,14 +41,6 @@
     text-transform: uppercase;
 
     color: #231F20;
-}
-
-#guideText{
-    margin-top: 1%;
-    margin-left: 1%;
-    margin-right: 1%;
-    
-
 }
 
 #mapBox{
