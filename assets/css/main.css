@@ -6,11 +6,12 @@
 
 #titleBox{
     position: relative;
-    width: 367px;
-    height: 100px;
+    max-width: 20vw;
+    min-height: 100px;
     left: 10vw;
     top: 5vh;
 
+    word-wrap: break-word;
     text-align: center;
     background: #CFF4C9;
     border: 1px solid #000000;
@@ -34,7 +35,6 @@
     font-family: 'Tiempos Text Italic';
     font-weight: normal;
     font-size: 14px;
-    left: 10px;
 }
 
 #headerOptions{
@@ -77,8 +77,8 @@ a:link, a:visited {
 }
 
 #introBox{
-    width: 60vw;
-    height: 70vh;
+    max-width: 60vw;
+    min-height: 60vh;
     margin: auto;
 
     background: #F8FFF6;
