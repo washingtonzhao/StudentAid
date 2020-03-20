@@ -349,7 +349,8 @@ li {
     border-radius: 6px;
     padding: 8px;
     margin-left: 14vw;
-    margin-top: 25vh;
+    margin-top: 20vh;
+    font-size: 12px;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
   }
