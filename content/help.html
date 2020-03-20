@@ -110,10 +110,10 @@
         
         <script>
             window.onload= function(){
-                    if (!('hasCodeRunBefore' in localStorage)){
+                    if (localStorage.getItem('isshow') == null){
                         $("#popup").css({"display":"block"});
                         $("#overlay").css({"display":"block"});
-                        console.log("man");
+                        localStorage.setItem('isshow',1);
                     }
             };
         </script>
