@@ -5,12 +5,25 @@ d3.xml('../assets/images/map.svg')
         styleImportedSVG();
     });
 
-
 class resourceObj{
     constructor(resourceName, resourceLink){
         this.resourceName = resourceName;
         this.resourceLink = resourceLink;
     }
+}
+
+var regionDisp ={
+    "Southern California" : "The Southern California region is a big area. These guides cover universities from Santa Barbara, Los Angeles, and Irvine.",
+    "Texas" : "Texas is a big state! These guides cover universities in cities around Texas such as Dallas and Austin.",
+    "Washington": "Washington is a big state separated by many regions. These guides cover resources from Tacoma, Seattle, and Olympia.",
+    "New England": "New England is a big area. These guides cover universities from Pennsylvania, New York State, and Massachusetts.",
+    "Midwest": "The Midwest is a big region. These guides cover resources in Illinois and Michigan."
+}
+
+function displayPopup()
+{
+    var popup = document.getElementById("popup");
+    popup.classList.toggle("show");
 }
 
 function displayResources(regionName, csvfile){
@@ -20,7 +33,7 @@ function displayResources(regionName, csvfile){
     document.getElementById("guideHeader").innerHTML = "You selected ";
     document.getElementById("guideHeader").appendChild(region);
 
-    document.getElementById("guideText").innerHTML = "The Southern California region is a big area. These guides cover universities from Santa Barbara, Los Angeles, and Irvine. We are currently working on our contributors form to add a resource to our database -- in the meantime, feel free to email ";
+    document.getElementById("guideText").innerHTML = regionDisp[regionName] + " We are currently working on our contributors form to add a resource to our database -- in the meantime, feel free to email ";
     
     var link = document.createElement("a");
     var node = document.createTextNode("washingz@usc.edu");
@@ -82,6 +95,8 @@ function displayResources(regionName, csvfile){
             flexItem.setAttribute("id", "flexItem");
             var logoItem = document.createElement("div");
             logoItem.setAttribute("id","logoItem");
+
+        
             var resourceItem = document.createElement("div");
             resourceItem.setAttribute("id","resources");
 
@@ -98,6 +113,7 @@ function displayResources(regionName, csvfile){
             for(var i=0; i<resources[association].length; i++){
                 var link = document.createElement("a");
                 link.setAttribute("id","resourceLink");
+                link.setAttribute("onclick","displayPopup()");
                 link.setAttribute("href", resources[association][i].resourceLink);
                 link.setAttribute("target","_blank");
                 var listItem = document.createElement("li");

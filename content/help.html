@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="../assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="../assets/css/help.css" />
         <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="../assets/js/jquery-3.4.1.js"></script>
         <script src="../assets/js/map.js"></script>
     </head>
 
@@ -73,10 +74,24 @@
             </div>
             
         </div>
-        
-        
-            
+    
+        <div id="popup">
+            <form class = "popuptext">
+                I agree that I will reach out to my school's network to provide or receive aid, but will not share the personal info of anyone requesting help beyond each document. 
+                <br/>
+                <input type="radio" id="agree" name="privacy" value="agree">I agree </input>
 
+                <input type="radio" id="disagree" name= "privacy" value="agree">I do not agree</input>
+
+                <br/>
+                I agree that I will not accept contact-based resources if I am unsure of my health or level of exposure to COVID-19.
+                <br/>
+                <input type="radio" id="agree" name="health" value="agree">I agree </input>
+
+                <input type="radio" id="disagree" name="health" value="agree">I do not agree</input>
+
+            </form>
+        </div>
 
 
     </body>
