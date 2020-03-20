@@ -109,13 +109,15 @@
         </div>
         
         <script>
-            window.onload= function(){
-                    if (localStorage.getItem('isshow') == null){
+            if (localStorage.getItem('isshow') == null){
+                window.onload= function(){
+                    
                         $("#popup").css({"display":"block"});
                         $("#overlay").css({"display":"block"});
                         localStorage.setItem('isshow',1);
-                    }
-            };
+                        
+                };
+            }
         </script>
 
     </body>
