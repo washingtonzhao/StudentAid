@@ -6,6 +6,7 @@ body {
 #headerWrapperHelp {
   height: 150px;
   width: 100vw;
+  margin-bottom: 1%;
 }
 
 #helpWrapper {
@@ -206,12 +207,13 @@ body {
 ul,
 li {
   list-style-type: none;
-  margin-left: 1px;
+  margin-left: 0px;
   padding-left: 0px;
+  padding-right: 1px;
   font-family: Tiempos Text;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 152.5%;
 }
 
@@ -351,4 +353,49 @@ li {
     animation: fadeIn 1s;
   }
   
+}
+
+@media screen and (min-width: 501px) and (max-width: 900px) {
+
+  #headerWrapperHelp {
+    height: 150px;
+    width: 100vw;
+    margin-bottom: 3px;
+  }
+
+  #indoorsWrapper {
+    left: -8% !important;
+    top: -8% !important;
+    position: absolute;
+    z-index: 3;
+  }
+
+  #guideBox {
+    height: 320px !important;
+    width: 304px;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    padding-top: 39px !important;
+    position: relative !important;
+    right: unset !important;
+    left: unset !important;
+    text-align: left !important;
+    z-index: 2;
+  }
+
+  #popup .popuptext {
+    min-width: 60vw;
+    max-height: 70vh;
+    position: absolute;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    margin-left: 14vw;
+    margin-top: 25vh;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+
 }
