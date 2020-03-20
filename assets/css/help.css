@@ -286,6 +286,7 @@ li {
     text-align: left !important;
     z-index: 2;
   }
+
   #guideHeader {
     width: 240px !important;
   }
@@ -294,7 +295,7 @@ li {
   }
   #indoorsWrapper {
     left: 240px !important;
-    top: -50px !important;
+    top: -25px !important;
     position: absolute;
     z-index: 3;
   }
