@@ -1,11 +1,11 @@
 d3.xml("../assets/images/map.svg")
-.then(data => {
-    d3.select("#map")
-    .node()
-    .appendChild(data.documentElement);
-    styleImportedSVG();
-})
-.catch(e => console.log(e));
+  .then(data => {
+      d3.select("#map")
+      .node()
+      .appendChild(data.documentElement);
+      styleImportedSVG();
+  })
+  .catch(e => console.log(e));
 
 
 class resourceObj {

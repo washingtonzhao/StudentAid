@@ -6,6 +6,7 @@ function validateCheck()
     {
         document.getElementById("popup").setAttribute("style","display:none;");
         document.getElementById("overlay").setAttribute("style","display:none");
+        sessionStorage.setItem('isshow',1);
     }
 
     else{

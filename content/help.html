@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" href="../assets/css/help.css" />
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="../assets/js/map.js"></script>
+
         <script src="../assets/js/formValidate.js"></script>
     </head>
 
@@ -107,17 +107,16 @@
                 <input type="submit" value = "submit"/>
             </form>
         </div>
-        
+        <script src="../assets/js/map.js"></script>
         <script>
-            if (localStorage.getItem('isshow') == null){
+
                 window.onload= function(){
-                    
+                    if (sessionStorage.getItem('isshow') == null){
                         $("#popup").css({"display":"block"});
                         $("#overlay").css({"display":"block"});
-                        localStorage.setItem('isshow',1);
-                        
+                    }
                 };
-            }
+            
         </script>
 
     </body>
