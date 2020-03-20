@@ -127,7 +127,7 @@ a:link, a:visited {
     -webkit-text-stroke-color: #CFF4C9;
 }
 
-@media screen and (max-width: 871px){
+@media only screen and (max-width: 871px){
 
     #headerWrapper{
         height: 200px;

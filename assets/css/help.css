@@ -232,6 +232,7 @@ body {
   flex-wrap: wrap;
   width: 90%;
   margin: auto;
+  margin-bottom: 4%;
 }
 
 #flexItem {
@@ -301,7 +302,7 @@ li {
 /* The actual popup (appears on top) */
 #popup .popuptext {
   visibility: hidden;
-  width: 160px;
+  width: 320px;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -311,7 +312,6 @@ li {
   z-index: 1;
   bottom: 125%;
   left: 50%;
-  margin-left: -80px;
 }
 
 /* Popup arrow */
@@ -329,8 +329,8 @@ li {
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 #popup .show {
   visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
+  -webkit-animation: fadeIn .11s;
+  animation: fadeIn .11s;
 }
 
 /* Add animation (fade in the popup) */

@@ -1,5 +1,5 @@
 //load map svg
-d3.xml("http://localhost:3000/")
+d3.xml("../assets/images/map.svg")
   .then(data => {
     d3.select("#map")
       .node()
@@ -29,6 +29,7 @@ var regionDisp = {
 };
 
 function displayPopup() {
+  console.log("lol");
   var popup = document.getElementById("popup");
   popup.classList.toggle("show");
 }
@@ -127,8 +128,8 @@ function displayResources(regionName, csvfile) {
         var link = document.createElement("a");
         link.setAttribute("id", "resourceLink");
         link.setAttribute("onclick", "displayPopup()");
-        link.setAttribute("href", resources[association][i].resourceLink);
-        link.setAttribute("target", "_blank");
+        // link.setAttribute("href", resources[association][i].resourceLink);
+        // link.setAttribute("target", "_blank");
         var listItem = document.createElement("li");
         var listText = document.createTextNode(
           resources[association][i].resourceName
@@ -146,22 +147,6 @@ function displayResources(regionName, csvfile) {
     }
   });
 }
-
-// <div id="flexItem">
-// <div id="logoItem">
-//     <img id="logo" src="../assets/images/usc.jpg"/>
-// </div>
-// <div id="resources">
-//     <br/>
-//     <span id="resourceAssociation">University of Southern California</span> <br/>
-//     <ul>
-//         <li>SpreadsheetSpreadsheetSpreadsheetSpreadsheetSpreadsheetSpreadsheetSpreadsheetSpreadsheetSpreadsheetSpreadsheetSpreadsheetSpreadsheet</li>
-//         <li>Spreadsheet</li>
-//         <li>Spreadsheet</li>
-//     </ul>
-//     <img id="mail"/>
-// </div>
-// </div>
 
 function styleImportedSVG() {
   d3.select("#soCalRegion")
