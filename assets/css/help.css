@@ -2,79 +2,6 @@ body {
   margin: 0;
 }
 
-@media only screen and (max-width: 500px) {
-  #helpWrapper {
-    position: relative;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    height: auto;
-    width: 100% !important;
-    margin: 0 !important;
-  }
-  #guideBox {
-    height: 340px !important;
-    max-width: 304px;
-    padding-left: 22px !important;
-    padding-right: 22px !important;
-    padding-top: 39px !important;
-    position: relative !important;
-    right: unset !important;
-    left: unset !important;
-    text-align: left !important;
-    z-index: 2;
-  }
-  #guideHeader {
-    width: 240px !important;
-  }
-  #guideText {
-    margin-top: 12px !important;
-  }
-  #indoorsWrapper {
-    left: 240px !important;
-    top: -50px !important;
-    position: absolute;
-    z-index: 3;
-  }
-  #mapBoxWrapper {
-    position: relative;
-    width: auto !important;
-    height: auto !important;
-    top: unset !important;
-    left: unset !important;
-    min-height: auto !important;
-  }
-  #mapBox {
-    position: absolute !important;
-    display: inline-block;
-    left: unset !important;
-    right: 0 !important;
-    width: 333px !important;
-    z-index: 1;
-    top: -50px !important;
-    padding-bottom: 42px !important;
-  }
-  #mapText {
-    margin-top: 77px !important;
-    margin-left: 45px !important;
-    width: 230px !important;
-  }
-  #alignRight {
-    text-align: left !important;
-    font-size: 14px !important;
-    text-transform: lowercase !important;
-  }
-  #map svg {
-    width: 272px !important;
-    height: auto !important;
-  }
-  #fine {
-    right: unset !important;
-    position: absolute !important;
-    bottom: -35px !important;
-    width: 85px !important;
-    transform: rotate(-45deg) !important;
-  }
-}
 
 #headerWrapperHelp {
   height: 150px;
@@ -294,60 +221,134 @@ li {
 
 /* Popup container */
 #popup {
-  position: relative;
-  display: inline-block;
+  display: none;
   cursor: pointer;
+  position: fixed;
+  left: 8%;
+  top: 5%;
+  z-index: 100;
 }
 
 /* The actual popup (appears on top) */
 #popup .popuptext {
-  visibility: hidden;
-  width: 320px;
+  min-width: 30vw;
+  max-height: 40vh;
+  position: absolute;
   background-color: #555;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
+  padding: 8px;
+  margin-left: 25vw;
+  margin-top: 37.5vh;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
 }
 
-/* Popup arrow */
-#popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
+
+#overlay {
+  position:fixed;
+  left:0;
+  top:0;
+  width:100vw;
+  height:100vh;
+  display:none;
+  background-color:#000;
+  opacity:0.3;
+  z-index: 10;
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-#popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn .11s;
-  animation: fadeIn .11s;
+#error{
+  color: red;
 }
 
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@media only screen and (max-width: 500px) {
+  #helpWrapper {
+    position: relative;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    height: auto;
+    width: 100% !important;
+    margin: 0 !important;
   }
-  to {
-    opacity: 1;
+  #guideBox {
+    height: 340px !important;
+    max-width: 304px;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    padding-top: 39px !important;
+    position: relative !important;
+    right: unset !important;
+    left: unset !important;
+    text-align: left !important;
+    z-index: 2;
   }
+  #guideHeader {
+    width: 240px !important;
+  }
+  #guideText {
+    margin-top: 12px !important;
+  }
+  #indoorsWrapper {
+    left: 240px !important;
+    top: -50px !important;
+    position: absolute;
+    z-index: 3;
+  }
+  #mapBoxWrapper {
+    position: relative;
+    width: auto !important;
+    height: auto !important;
+    top: unset !important;
+    left: unset !important;
+    min-height: auto !important;
+  }
+  #mapBox {
+    position: absolute !important;
+    display: inline-block;
+    left: unset !important;
+    right: 0 !important;
+    width: 333px !important;
+    z-index: 1;
+    top: -50px !important;
+    padding-bottom: 42px !important;
+  }
+  #mapText {
+    margin-top: 77px !important;
+    margin-left: 45px !important;
+    width: 230px !important;
+  }
+  #alignRight {
+    text-align: left !important;
+    font-size: 14px !important;
+    text-transform: lowercase !important;
+  }
+  #map svg {
+    width: 272px !important;
+    height: auto !important;
+  }
+  #fine {
+    right: unset !important;
+    position: absolute !important;
+    bottom: -35px !important;
+    width: 85px !important;
+    transform: rotate(-45deg) !important;
+  }
+
+  #popup .popuptext {
+    min-width: 50vw;
+    max-height: 45vh;
+    position: absolute;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    margin-left: 14vw;
+    margin-top: 25vh;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
 }

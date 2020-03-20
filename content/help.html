@@ -12,11 +12,12 @@
         <link rel="stylesheet" type="text/css" href="../assets/css/main.css" />
         <link rel="stylesheet" type="text/css" href="../assets/css/help.css" />
         <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="../assets/js/map.js"></script>
+        <script src="../assets/js/formValidate.js"></script>
     </head>
 
     <body>
-
         <div id="headerWrapperHelp">
             <div id="titleBox">
                 <h1 id="titleHeader">Coronavirus stinks</h1>
@@ -72,29 +73,50 @@
                     <div id="map"></div>
                     <img id = "fine" src="../assets/images/fine.png"/>
                 </div>
+               
             </div>
             
-            <div id="popup">
-                <form class = "popuptext">
-                    I agree that I will reach out to my school's network to provide or receive aid, but will not share the personal info of anyone requesting help beyond each document. 
-                    <br/>
-                    <input type="radio" id="agree" name="privacy" value="agree">I agree </input>
-    
-                    <input type="radio" id="disagree" name= "privacy" value="agree">I do not agree</input>
-    
-                    <br/>
-                    I agree that I will not accept contact-based resources if I am unsure of my health or level of exposure to COVID-19.
-                    <br/>
-                    <input type="radio" id="agree" name="health" value="agree">I agree </input>
-    
-                    <input type="radio" id="disagree" name="health" value="agree">I do not agree</input>
-    
-                </form>
-            </div>
+            
+           
         </div>
-    
-        
 
+        <div id="overlay"></div>
+        <div id="popup">
+            <form class = "popuptext" action="JavaScript:validateCheck();">
+                I agree that I will reach out to my school's network to provide or receive aid, but will not share the personal info of anyone requesting help beyond each document. 
+                <br/>
+                <input type="radio" id="agree" name="privacy" value="agree">I agree </input>
+
+                <input type="radio" id="disagree" name= "privacy" value="disagree">I do not agree</input>
+
+                <br/> <br/>
+                I agree that I will not accept contact-based resources if I am unsure of my health or level of exposure to COVID-19.
+                <br/>
+                <input type="radio" id="agree" name="health" value="agree">I agree </input>
+
+                <input type="radio" id="disagree" name="health" value="disagree">I do not agree</input>
+                
+                <br/> <br/>
+                I agree that I accept all risk and responsibility in using these help resources and will hold any facilitator associated with this platform harmless.
+                <br/>
+                <input type="radio" id="agree" name="risk" value="agree">I agree </input>
+
+                <input type="radio" id="disagree" name="risk" value="disagree">I do not agree</input>
+                <br/><br/>
+                <span id="error"></span> <br/>
+                <input type="submit" value = "submit"/>
+            </form>
+        </div>
+        
+        <script>
+            window.onload= function(){
+                    if (!('hasCodeRunBefore' in localStorage)){
+                        $("#popup").css({"display":"block"});
+                        $("#overlay").css({"display":"block"});
+                        console.log("man");
+                    }
+            };
+        </script>
 
     </body>
 

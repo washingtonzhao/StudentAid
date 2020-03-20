@@ -1,12 +1,12 @@
-//load map svg
 d3.xml("../assets/images/map.svg")
-  .then(data => {
+.then(data => {
     d3.select("#map")
-      .node()
-      .appendChild(data.documentElement);
+    .node()
+    .appendChild(data.documentElement);
     styleImportedSVG();
-  })
-  .catch(e => console.log(e));
+})
+.catch(e => console.log(e));
+
 
 class resourceObj {
   constructor(resourceName, resourceLink) {
@@ -28,11 +28,6 @@ var regionDisp = {
     "The Midwest is a big region. These guides cover resources in Illinois and Michigan."
 };
 
-function displayPopup() {
-  console.log("lol");
-  var popup = document.getElementById("popup");
-  popup.classList.toggle("show");
-}
 
 function displayResources(regionName, csvfile) {
   var region = document.createElement("span");
@@ -103,8 +98,6 @@ function displayResources(regionName, csvfile) {
       resources[data[i].Association] = tempArr;
     }
 
-    console.log(resources);
-
     for (var association in resources) {
       var flexItem = document.createElement("div");
       flexItem.setAttribute("id", "flexItem");
@@ -127,9 +120,8 @@ function displayResources(regionName, csvfile) {
       for (var i = 0; i < resources[association].length; i++) {
         var link = document.createElement("a");
         link.setAttribute("id", "resourceLink");
-        link.setAttribute("onclick", "displayPopup()");
-        // link.setAttribute("href", resources[association][i].resourceLink);
-        // link.setAttribute("target", "_blank");
+        link.setAttribute("href", resources[association][i].resourceLink);
+        link.setAttribute("target", "_blank");
         var listItem = document.createElement("li");
         var listText = document.createTextNode(
           resources[association][i].resourceName
