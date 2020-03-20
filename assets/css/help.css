@@ -44,12 +44,13 @@
 }
 
 #mapBox{
-    position: absolute;
+    position: relative;
     width: 70%;
-    height: 75%;
-    top: 20%;
+    min-height: 75%;
+    top: 22%;
     left: 15%;
-    background: #F8FFF6;
+    /* background: #F8FFF6; */
+    background: #F7D193;
     border: 1px solid #000000;
     box-sizing: border-box;
     /* Subtle */
@@ -85,6 +86,18 @@
     text-align: right;
 
     color: #231F20;
+}
+
+#resourcesDesc{
+    font-family: 'Bau Regular';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 152.5%;
+    text-align: left;
+
+    color: #231F20;
+    text-transform: none;
 }
 
 #map{
@@ -133,3 +146,67 @@
 }
 
 
+#flexParent{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+
+#flexItem{
+    margin-left: 5%;
+    margin-top: 2%;
+    font-size: 12px;
+    background: #F8FFF6;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+    word-wrap: none;
+    width: 45%;
+}
+
+#logoItem{
+    height: 100%;
+    width: 20%;
+    display: inline-block;
+}
+
+#logo{
+    width: 100%;
+    height: 60%;
+    margin-top: 20%;
+    margin-left: 10%;
+    padding: 5px;
+}
+
+#resources{
+    display: block; 
+    height: 100%;
+    width: 80%;
+    float: right;
+}
+
+#resourceAssociation{
+    font-family: 'Tiempos Headline';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: capitalize;
+
+}
+
+ul,li{
+    list-style-type: none;
+    margin-left: 1px;
+    padding-left: 0px;
+    font-family: Tiempos Text;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 152.5%;
+}
+
+#resourceLink:hover{
+    color: blue;
+}
