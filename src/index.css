@@ -12,6 +12,18 @@ code {
     monospace;
 }
 
+/* fonts that haven't been imported yet
+  import "../assets/fonts/Bau-Regular.otf";
+  import "../assets/fonts/Tiempos.otf";
+  import "../assets/fonts/TiemposHeadline-Black.otf";
+  import "../assets/fonts/TiemposHeadline-Bold.otf";
+  import "../assets/fonts/TiemposHeadline-Light.otf";
+  import "../assets/fonts/TiemposHeadline-Medium.otf";
+  import "../assets/fonts/TiemposHeadline-Regular.otf";
+  import "../assets/fonts/TiemposHeadline-Semibold.otf";
+  import "../assets/fonts/TiemposText-Bold.otf";
+*/
+
 @font-face {
   font-family: "Bau-Bold";
   font-style: normal;
@@ -19,20 +31,6 @@ code {
   src: url(./assets/fonts/Bau-Bold.otf) format("opentype");
 }
 
-/*
-import "../assets/fonts/Bau-Medium.otf";
-import "../assets/fonts/Bau-Regular.otf";
-import "../assets/fonts/Tiempos.otf";
-import "../assets/fonts/TiemposHeadline-Black.otf";
-import "../assets/fonts/TiemposHeadline-Bold.otf";
-import "../assets/fonts/TiemposHeadline-Light.otf";
-import "../assets/fonts/TiemposHeadline-Medium.otf";
-import "../assets/fonts/TiemposHeadline-Regular.otf";
-import "../assets/fonts/TiemposHeadline-Semibold.otf";
-import "../assets/fonts/TiemposText-Bold.otf";
-import "../assets/fonts/TiemposText-Italic.otf";
-import "../assets/fonts/TiemposText-Regular.otf";
-*/
 @font-face {
   font-family: "Bau-Medium";
   font-style: normal;
