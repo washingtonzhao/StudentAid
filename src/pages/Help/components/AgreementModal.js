@@ -5,20 +5,21 @@ import styled from 'styled-components';
 const AgreementModal = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
+      <button
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      >
+        Open Modal
+      </button>
 
       <Modal
         isOpen={modalIsOpen}
-        onRequestClose={closeModal}
+        onRequestClose={() => {
+          setIsOpen(false);
+        }}
         style={modalStyles}
         contentLabel="Example Modal"
       >
@@ -28,21 +29,48 @@ const AgreementModal = () => {
             receive aid, but will not share the personal info of anyone
             requesting help beyond each document.
             <br />
-            <input type="radio" id="agree" name="privacy" value="agree" />
-            <input type="radio" id="disagree" name="privacy" value="disagree" />
+            <label>
+              <input type="radio" id="agree" name="privacy" value="agree" />I
+              Agree
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="disagree"
+                name="privacy"
+                value="disagree"
+              />
+              I Disagree
+            </label>
             <br /> <br />
             I agree that I will not accept contact-based resources if I am
             unsure of my health or level of exposure to COVID-19.
             <br />
-            <input type="radio" id="agree" name="health" value="agree" />
-            <input type="radio" id="disagree" name="health" value="disagree" />
+            <label>
+              <input type="radio" id="agree" name="health" value="agree" />I
+              Agree
+            </label>
+            <label>
+              <input
+                type="radio"
+                id="disagree"
+                name="health"
+                value="disagree"
+              />
+              I Disagree
+            </label>
             <br /> <br />
             I accept all risk and responsibility in using these help resources
             and will hold any facilitator associated with this platform
             harmless.
             <br />
-            <input type="radio" id="agree" name="risk" value="agree" />
-            <input type="radio" id="disagree" name="risk" value="disagree" />
+            <label>
+              <input type="radio" id="agree" name="risk" value="agree" />I Agree
+            </label>
+            <label>
+              <input type="radio" id="disagree" name="risk" value="disagree" />I
+              Disagree
+            </label>
             <br />
             <br />
             <span id="error"></span> <br />
