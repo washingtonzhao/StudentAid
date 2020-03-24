@@ -1,7 +1,8 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Home, Help } from "./pages";
-import NavBar from "./components/NavBar";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Home } from './pages';
+import Help from './pages/Help/Help';
+import NavBar from './components/NavBar';
 
 function App() {
   return (

@@ -2,7 +2,6 @@ body {
   margin: 0;
 }
 
-
 #headerWrapperHelp {
   height: 150px;
   width: 100vw;
@@ -27,7 +26,7 @@ body {
   text-align: center;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   border-radius: 1px;
-  font-family: "Tiempos Text Regular";
+  font-family: 'Tiempos Text Regular';
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -38,7 +37,7 @@ body {
 
 #guideHeader {
   margin-top: 2%;
-  font-family: "Bau Bold";
+  font-family: 'Bau Bold';
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -71,7 +70,7 @@ body {
   width: 40%;
   margin-top: 3%;
   margin-left: 15%;
-  font-family: "Bau Medium";
+  font-family: 'Bau Medium';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -84,7 +83,7 @@ body {
 }
 
 #alignRight {
-  font-family: "Tiempos Text Regular";
+  font-family: 'Tiempos Text Regular';
   font-style: italic;
   font-weight: normal;
   font-size: 14px;
@@ -97,7 +96,7 @@ body {
 }
 
 #resourcesDesc {
-  font-family: "Bau Regular";
+  font-family: 'Bau Regular';
   font-style: italic;
   font-weight: 500;
   font-size: 14px;
@@ -197,7 +196,7 @@ body {
 }
 
 #resourceAssociation {
-  font-family: "Tiempos Headline";
+  font-family: 'Tiempos Headline';
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -218,7 +217,7 @@ li {
 }
 
 #resourceLink:hover {
-  color: #6186FF;
+  color: #6186ff;
 }
 
 /* Popup container */
@@ -247,23 +246,21 @@ li {
   animation: fadeIn 1s;
 }
 
-
 #overlay {
-  position:fixed;
-  left:0;
-  top:0;
-  width:100vw;
-  height:100vh;
-  display:none;
-  background-color:#000;
-  opacity:0.3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background-color: #000;
+  opacity: 0.3;
   z-index: 10;
 }
 
-#error{
-  color: #E27047;
+#error {
+  color: #e27047;
 }
-
 
 @media only screen and (max-width: 500px) {
   #helpWrapper {
@@ -357,7 +354,6 @@ li {
 }
 
 @media screen and (min-width: 501px) and (max-width: 900px) {
-
   #headerWrapperHelp {
     height: 150px;
     width: 100vw;
@@ -398,11 +394,10 @@ li {
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
   }
-
 }
 
-@media screen and (min-width: 1300px){
-    ul,
+@media screen and (min-width: 1300px) {
+  ul,
   li {
     list-style-type: none;
     margin-left: 0px;
@@ -413,5 +408,5 @@ li {
     font-weight: normal;
     font-size: 12px;
     line-height: 152.5%;
-}
+  }
 }
