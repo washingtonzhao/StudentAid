@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@font-face {
+  font-family: "Bau-Bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url(./assets/fonts/Bau-Bold.otf) format("opentype");
+}
+
+/*
+import "../assets/fonts/Bau-Medium.otf";
+import "../assets/fonts/Bau-Regular.otf";
+import "../assets/fonts/Tiempos.otf";
+import "../assets/fonts/TiemposHeadline-Black.otf";
+import "../assets/fonts/TiemposHeadline-Bold.otf";
+import "../assets/fonts/TiemposHeadline-Light.otf";
+import "../assets/fonts/TiemposHeadline-Medium.otf";
+import "../assets/fonts/TiemposHeadline-Regular.otf";
+import "../assets/fonts/TiemposHeadline-Semibold.otf";
+import "../assets/fonts/TiemposText-Bold.otf";
+import "../assets/fonts/TiemposText-Italic.otf";
+import "../assets/fonts/TiemposText-Regular.otf";
+*/
+@font-face {
+  font-family: "Bau-Medium";
+  font-style: normal;
+  src: url(./assets/fonts/Bau-Medium.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "TiemposText-Regular";
+  font-style: normal;
+  src: url(./assets/fonts/TiemposText-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "TiemposText-Italic";
+  font-style: normal;
+  src: url(./assets/fonts/TiemposText-Italic.otf) format("opentype");
+}

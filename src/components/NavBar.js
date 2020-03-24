@@ -12,7 +12,7 @@ export const NavBar = () => {
       </NavOption>
 
       <div key={"right"}>
-        <MenuButton onClick={() => setIsOpen(!isOpen)}>Menu</MenuButton>
+        <MenuButton onClick={() => setIsOpen(!isOpen)}>MENU</MenuButton>
         <Drawer anchor={"right"} open={isOpen} onClose={() => setIsOpen(false)}>
           <DrawerContent>
             <NavOption
@@ -54,23 +54,26 @@ const Logo = styled.div`
   height: auto;
   padding: 12px;
   background-color: #cff4c9;
+  font-size: 14px;
   border: 1px solid #000000;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
+  border-radius: 2px;
   display: flex;
   flex-direction: column;
-  font-family: BauBold;
+  font-family: Bau-Bold;
 `;
 
 const MenuButton = styled.div`
   background: #f8fff6;
   border: 1px solid #000000;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  border-radius: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-family: Bau-Medium;
+  font-size: 12px;
 `;
 
 const DrawerContent = styled.div`

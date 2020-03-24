@@ -103,12 +103,14 @@ const SurvivalBoxHeader = styled.div`
   line-height: 20px;
   max-width: 80%;
   margin-top: 16px;
+  font-family: Bau-Bold;
 `;
 const SurvivalBoxContent = styled.div`
   position: relative;
   margin-top: 16px;
   font-size: 14px;
   line-height: 20px;
+  font-family: TiemposText-Regular;
 `;
 const RegionBoxWrapper = styled.div`
   display: flex;
@@ -138,12 +140,14 @@ const RegionBoxHeader = styled.div`
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
+  font-family: Bau-Medium;
 `;
 const RegionBoxSubHeader = styled.div`
-  font-style: italic;
+  margin-top: 8px;
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
+  font-family: TiemposText-Italic;
 `;
 
 const RegionCardWrapper = styled.div`
