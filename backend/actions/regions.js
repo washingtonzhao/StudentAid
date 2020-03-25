@@ -16,9 +16,9 @@ const getRegionResources = async (req, res) => {
   const resources = await Region.find(
     {
       deletedAt: null,
-      region: req.params.regionId
+      _id: req.params.regionId
     },
-    "resources"
+    "associations"
   ).catch(() => {
     throw new Error(`Trouble finding resources for ${region}...`);
   });

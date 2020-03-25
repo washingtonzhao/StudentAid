@@ -24,7 +24,6 @@ server.use(cors());
 server.use(morgan("dev"));
 server.use(bodyParser.json());
 
-server.get("/", (req, res) => res.send("Hello world!"));
 server.use("/regions", regionRouter);
 
 server.listen(process.env.SERVER_PORT, () =>
