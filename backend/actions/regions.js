@@ -1,5 +1,4 @@
 const Region = require("../models/Region");
-const dayjs = require("dayjs");
 
 const getRegions = async (req, res) => {
   const regions = await Region.find(
@@ -27,4 +26,12 @@ const getRegionResources = async (req, res) => {
   res.json(resources);
 };
 
-module.export = { getRegions, getRegionResources };
+const createRegion = async (req, res) => {
+  console.log(req.body);
+  await Region.create(req.body).catch(() => {
+    throw new Error("Trouble creating region...");
+  });
+  res.json({ success: true });
+};
+
+module.exports = { getRegions, getRegionResources, createRegion };

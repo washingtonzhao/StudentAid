@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 
 const regionSchema = new Schema({
   region: String,
-  resources: Array,
+  resources: Object,
   updatedAt: { type: Number, default: dayjs().unix() },
   deletedAt: { type: Number, default: null }
 });
