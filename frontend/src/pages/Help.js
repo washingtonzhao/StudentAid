@@ -5,6 +5,8 @@ import { ReactComponent as Close } from "../assets/svg/close.svg";
 import { ReactComponent as Smile } from "../assets/svg/smile.svg";
 import { ReactComponent as Fine } from "../assets/svg/fine.svg";
 import Grid from "../components/Grid";
+import { getRegions } from "../usecases/regions";
+import useRequest from "../hooks/useRequest";
 
 const defaultSurvivalBox = {
   header: "WELCOME TO THE COVID-19 STUDENT SURVIVAL GUIDE",
@@ -12,23 +14,29 @@ const defaultSurvivalBox = {
     "This website is maintained by students for students whose lives, studies, and jobs have been affected by the 2020 COVID-19 outbreak. All students are welcome to use the regional or even university-specific resources on this website, even if they don’t attend the school associated with a specific resource."
 };
 
-export const Help = () => {
-  const [region, setRegion] = useState("");
+export const Help = ({ history }) => {
   const [survivalBoxIsOpen, setSurvivalBoxIsOpen] = useState(true);
+  const [regions, Loading, error] = useRequest(getRegions);
+
+  if (Loading) return <Loading />;
+  if (error) return <div>WHOOPS SOMETHING BBAD HAPENED</div>;
 
   return (
     <ContentWrapper>
       <SurvivalBox
-        region={region}
         survivalBoxIsOpen={survivalBoxIsOpen}
         setSurvivalBoxIsOpen={setSurvivalBoxIsOpen}
       />
-      <RegionBox region={region} survivalBoxIsOpen={survivalBoxIsOpen} />
+      <RegionBox
+        history={history}
+        survivalBoxIsOpen={survivalBoxIsOpen}
+        regions={regions}
+      />
     </ContentWrapper>
   );
 };
 
-const SurvivalBox = ({ region, survivalBoxIsOpen, setSurvivalBoxIsOpen }) => {
+const SurvivalBox = ({ survivalBoxIsOpen, setSurvivalBoxIsOpen }) => {
   return (
     <SurvivalBoxWrapper className={!survivalBoxIsOpen ? "hidden" : ""}>
       <Outdoors
@@ -38,17 +46,13 @@ const SurvivalBox = ({ region, survivalBoxIsOpen, setSurvivalBoxIsOpen }) => {
         style={{ position: "absolute", bottom: -54 / 2, right: -54 / 2 }}
       />
       <CloseButton onClick={() => setSurvivalBoxIsOpen(false)} />
-      <SurvivalBoxHeader>
-        {!region && defaultSurvivalBox.header}
-      </SurvivalBoxHeader>
-      <SurvivalBoxContent>
-        {!region && defaultSurvivalBox.body}
-      </SurvivalBoxContent>
+      <SurvivalBoxHeader>{defaultSurvivalBox.header}</SurvivalBoxHeader>
+      <SurvivalBoxContent>{defaultSurvivalBox.body}</SurvivalBoxContent>
     </SurvivalBoxWrapper>
   );
 };
 
-const RegionBox = ({ region, survivalBoxIsOpen }) => {
+const RegionBox = ({ survivalBoxIsOpen, regions, history }) => {
   return (
     <RegionBoxWrapper survivalBoxIsOpen={survivalBoxIsOpen}>
       <RegionBoxContentWrapper survivalBoxIsOpen={survivalBoxIsOpen}>
@@ -61,11 +65,19 @@ const RegionBox = ({ region, survivalBoxIsOpen }) => {
             More resources are coming soon.
           </RegionBoxSubHeader>
           <Grid cols={2} style={{ marginTop: 32 }}>
-            {Array(3)
-              .fill(null)
-              .map(() => (
-                <RegionCard />
-              ))}
+            {regions.map(({ region, _id }, i) => (
+              <RegionCard
+                key={i}
+                region={region}
+                onClick={() =>
+                  console.log("CLICKED ON ", _id) ||
+                  history.push({
+                    pathname: "/resources",
+                    state: { regionId: _id, region: region }
+                  })
+                }
+              />
+            ))}
           </Grid>
         </RegionBoxContent>
       </RegionBoxContentWrapper>
@@ -73,7 +85,9 @@ const RegionBox = ({ region, survivalBoxIsOpen }) => {
   );
 };
 
-const RegionCard = () => <RegionCardWrapper>Stuff</RegionCardWrapper>;
+const RegionCard = ({ region, onClick }) => (
+  <RegionCardWrapper onClick={onClick}>{region}</RegionCardWrapper>
+);
 
 const ContentWrapper = styled.div`
   display: flex;
