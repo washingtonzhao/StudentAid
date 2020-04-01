@@ -22,7 +22,11 @@ const Help = () => {
         survivalBoxIsOpen={survivalBoxIsOpen}
         setSurvivalBoxIsOpen={setSurvivalBoxIsOpen}
       />
-      <RegionBox region={region} survivalBoxIsOpen={survivalBoxIsOpen} />
+      <RegionBox
+        region={region}
+        setRegion={setRegion}
+        survivalBoxIsOpen={survivalBoxIsOpen}
+      />
     </ContentWrapper>
   );
 };

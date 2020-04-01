@@ -1,9 +1,7 @@
 import React from 'react';
 import { ReactComponent as Fine } from '../../../assets/svg/fine.svg';
-import Grid from '../../../components/Grid';
 import styled from 'styled-components';
-
-const RegionCard = () => <RegionCardWrapper>Stuff</RegionCardWrapper>;
+import RegionMap from './RegionMap';
 
 const RegionBox = ({ region, survivalBoxIsOpen }) => {
   return (
@@ -17,13 +15,7 @@ const RegionBox = ({ region, survivalBoxIsOpen }) => {
           <RegionBoxSubHeader>
             More resources are coming soon.
           </RegionBoxSubHeader>
-          <Grid cols={2} style={{ marginTop: 32 }}>
-            {Array(3)
-              .fill(null)
-              .map(() => (
-                <RegionCard />
-              ))}
-          </Grid>
+          <RegionMap />
         </RegionBoxContent>
       </RegionBoxContentWrapper>
     </RegionBoxWrapper>
@@ -68,14 +60,4 @@ const RegionBoxSubHeader = styled.div`
   font-size: 14px;
   line-height: 21px;
   font-family: TiemposText-Italic;
-`;
-
-const RegionCardWrapper = styled.div`
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid #000000;
-  border-radius: 4px;
-  width: 132px;
-  height: 168px;
-  flex-basis: 100%;
-  flex: 1;
 `;
