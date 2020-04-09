@@ -203,7 +203,7 @@ const RegionBox = ({
           isMobile={isMobile}
           style={{ padding: 84, paddingTop: 120 }}
         >
-          <Outdoors
+          {/* <Outdoors
             style={{
               position: "absolute",
               zIndex: 3,
@@ -213,7 +213,7 @@ const RegionBox = ({
           />
           <FineDesktop
             style={{ position: "absolute", bottom: 54, right: -56, width: 154 }}
-          />
+          /> */}
 
           <DesktopRegionResources
             regionId={getRegionId(region)}
@@ -225,7 +225,7 @@ const RegionBox = ({
 
   return (
     <RegionBoxWrapper survivalBoxIsOpen={survivalBoxIsOpen}>
-      {!isMobile && (
+      {/* {!isMobile && (
         <Outdoors
           style={{
             position: "absolute",
@@ -234,7 +234,7 @@ const RegionBox = ({
             left: -32,
           }}
         />
-      )}
+      )} */}
       <RegionBoxContentWrapper
         isSmallLaptop={isSmallLaptop}
         survivalBoxIsOpen={survivalBoxIsOpen}
@@ -527,14 +527,14 @@ const HelpMobileLoadingState = () => (
 
 const HelpLoadingState = () => (
   <RegionBoxWrapper>
-    <Outdoors
+    {/* <Outdoors
       style={{
         position: "absolute",
         zIndex: 3,
         top: -48,
         left: -32,
       }}
-    />
+    /> */}
 
     <RegionBoxContentWrapper style={{ paddingTop: 120 }}>
       {/* <FineDesktop
