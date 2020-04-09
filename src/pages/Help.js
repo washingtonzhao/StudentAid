@@ -77,9 +77,8 @@ const Disclaimer = ({ setIsOpen }) => {
         </div>
       </div>
       <DisclaimerText>
-        I agree I do not agree I agree that I will not accept or provide
-        contact-based resources if I am unsure of my health or level of exposure
-        to COVID-19.
+        I agree that I will not accept or provide contact-based resources if I
+        am unsure of my health or level of exposure to COVID-19.
       </DisclaimerText>
       <div style={{ display: "flex", marginTop: 16 }}>
         <div style={{ display: "flex", alignItems: "center" }}>
