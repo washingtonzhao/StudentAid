@@ -9,18 +9,8 @@ export const Home = () => {
     <ContentWrapper isMobile={isMobile}>
       <Message isMobile={isMobile}>
         hey, coronavirus stinks. but we got you. we’re currently working with
-        schools across the nation to compile{" "}
-        <span style={{ color: "#B2C0F3" }}>
-          student resources for relocation
-        </span>
-        ,{" "}
-        <span style={{ color: "#E27047" }}>
-          up-to-date information about COVID-19
-        </span>
-        , and{" "}
-        <span style={{ color: "#CFF4C9" }}>
-          strategies for thriving at home.{" "}
-        </span>
+        schools across the nation to compile student resources for relocation,
+        up-to-date information about COVID-19 strategies for thriving at home.
         we hope it helps.
         <div style={{ marginTop: 32, color: "#231F20", textAlign: "right" }}>
           {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}– with love,
@@ -54,5 +44,5 @@ const Message = styled.div`
   font-family: Bau-Medium;
   line-height: ${({ isMobile }) => (isMobile ? "32px" : "56px")};
   font-size: ${({ isMobile }) => (isMobile ? "24px" : "36px")};
-  color: #189ffa;
+  color: #231f20;
 `;

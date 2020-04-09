@@ -32,7 +32,7 @@ export const RegionResources = ({ region, regionId, history }) => {
       </SelectedSubHeader>
       {formattedData.map(([subRegion, resources], i) => (
         <>
-          <RegionBoxHeader>{subRegion}</RegionBoxHeader>
+          <RegionBoxHeader>{_.startCase(_.toLower(subRegion))}</RegionBoxHeader>
           <RegionSection>
             {resources.map(({ name, url }) => (
               <div style={{ marginTop: 16 }}>
@@ -78,7 +78,9 @@ export const DesktopRegionResources = ({ regionId }) => {
       <Header>You're not alone.</Header>
       {formattedData.map(([subRegion, resources], i) => (
         <ResourceCard>
-          <ResourceCardHeader>{subRegion}</ResourceCardHeader>
+          <ResourceCardHeader>
+            {_.startCase(_.toLower(subRegion))}
+          </ResourceCardHeader>
           {resources.map(({ name, url }) => (
             <div style={{ marginTop: 16 }}>
               <ResourceLink href={url} target="_blank">
