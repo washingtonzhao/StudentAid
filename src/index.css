@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* fonts that haven't been imported yet
+  import "../assets/fonts/Bau-Regular.otf";
+  import "../assets/fonts/Tiempos.otf";
+  import "../assets/fonts/TiemposHeadline-Black.otf";
+  import "../assets/fonts/TiemposHeadline-Bold.otf";
+  import "../assets/fonts/TiemposHeadline-Light.otf";
+  import "../assets/fonts/TiemposHeadline-Medium.otf";
+  import "../assets/fonts/TiemposHeadline-Regular.otf";
+  import "../assets/fonts/TiemposHeadline-Semibold.otf";
+  import "../assets/fonts/TiemposText-Bold.otf";
+*/
+
+@font-face {
+  font-family: "Bau-Bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url(./assets/fonts/Bau-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Bau-Medium";
+  font-style: normal;
+  src: url(./assets/fonts/Bau-Medium.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "TiemposText-Regular";
+  font-style: normal;
+  src: url(./assets/fonts/TiemposText-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "TiemposText-Italic";
+  font-style: normal;
+  src: url(./assets/fonts/TiemposText-Italic.otf) format("opentype");
+}
+@font-face {
+  font-family: "TiemposHeadline-Medium";
+  font-style: normal;
+  src: url(./assets/fonts/TiemposHeadline-Medium.otf) format("opentype");
+}
+@font-face {
+  font-family: "TiemposHeadline-Semibold";
+  font-style: normal;
+  src: url(./assets/fonts/TiemposHeadline-Semibold.otf) format("opentype");
+}
+@font-face {
+  font-family: "TiemposText-Bold";
+  font-style: normal;
+  src: url(./assets/fonts/TiemposText-Bold.otf) format("opentype");
+}
