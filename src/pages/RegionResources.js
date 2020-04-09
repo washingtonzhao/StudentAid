@@ -217,31 +217,6 @@ const ResourceCardHeader = styled.div`
   font=size: 24px;
 `;
 
-const wordsNotCapitalizedInTitles = [
-  "a",
-  "an",
-  "the",
-  "for",
-  "and",
-  "nor",
-  "but",
-  "or",
-  "yet",
-  "so",
-  "at",
-  "around",
-  "by",
-  "after",
-  "along",
-  "for",
-  "from",
-  "of",
-  "on",
-  "to",
-  "with",
-  "without",
-];
-
 /*
 const RegionCardsContainer = styled.div`
   display: flex;

@@ -12,16 +12,26 @@ import getRegionId from "../utils/getRegionId";
 import { useMediaQuery } from "react-responsive";
 import Map from "../components/Map";
 import { DesktopRegionResources } from "./RegionResources";
+import Modal from "react-modal";
 
 export const Help = ({ history }) => {
   const [region, setRegion] = useState("default");
   const [survivalBoxIsOpen, setSurvivalBoxIsOpen] = useState(true);
   const [regions, Loading, error] = useRequest(getRegions);
+  const [isOpen, setIsOpen] = useState(true);
 
   if (error) return <div>WHOOPS SOMETHING BBAD HAPENED</div>;
 
   return (
     <ContentWrapper>
+      <Modal
+        isOpen={isOpen}
+        style={{
+          overlay: { zIndex: 1000 },
+        }}
+      >
+        <Disclaimer setIsOpen={setIsOpen} />
+      </Modal>
       <SurvivalBox
         region={region}
         setRegion={setRegion}
@@ -37,6 +47,69 @@ export const Help = ({ history }) => {
         setRegion={setRegion}
       />
     </ContentWrapper>
+  );
+};
+
+const Disclaimer = ({ setIsOpen }) => {
+  const [firstCondition, setFirstCondition] = useState(false);
+  const [secondCondition, setSecondCondition] = useState(false);
+
+  return (
+    <DisclaimerContainer>
+      <DisclaimerHeader>Agreements</DisclaimerHeader>
+      <DisclaimerText>
+        I agree that I will reach out to my community’s network to provide or
+        receive aid, but will not share the personal info of anyone requesting
+        help beyond each document.
+      </DisclaimerText>
+      <div style={{ display: "flex", marginTop: 16 }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <DisclaimerText style={{ marginTop: 0 }}>I agree</DisclaimerText>
+          <DisclaimerCheckBox handleClick={() => setFirstCondition(true)} />
+        </div>
+        <div style={{ display: "flex", alignItems: "center", marginLeft: 12 }}>
+          <DisclaimerText style={{ marginTop: 0 }}>
+            I do not agree
+          </DisclaimerText>
+          <DisclaimerCheckBox handleClick={() => setFirstCondition(false)} />
+        </div>
+      </div>
+      <DisclaimerText>
+        I agree I do not agree I agree that I will not accept or provide
+        contact-based resources if I am unsure of my health or level of exposure
+        to COVID-19.
+      </DisclaimerText>
+      <div style={{ display: "flex", marginTop: 16 }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <DisclaimerText style={{ marginTop: 0 }}>I agree</DisclaimerText>
+          <DisclaimerCheckBox handleClick={() => setSecondCondition(true)} />
+        </div>
+        <div style={{ display: "flex", alignItems: "center", marginLeft: 12 }}>
+          <DisclaimerText style={{ marginTop: 0 }}>
+            I do not agree
+          </DisclaimerText>
+          <DisclaimerCheckBox handleClick={() => setSecondCondition(false)} />
+        </div>
+      </div>
+      <SubmitButton
+        onClick={() => firstCondition && secondCondition && setIsOpen(false)}
+      >
+        Submit
+      </SubmitButton>
+    </DisclaimerContainer>
+  );
+};
+
+const DisclaimerCheckBox = ({ handleClick }) => {
+  const [active, setActive] = useState(false);
+  return (
+    <Checkbox
+      onClick={() => {
+        setActive(!active);
+        handleClick();
+      }}
+      style={active ? { background: "#CFF4C9" } : {}}
+    />
   );
 };
 
@@ -358,6 +431,64 @@ const SelectedRegionBox = styled.div`
   display: flex;
   align-items: center;
   margin-left: 12px;
+`;
+
+const DisclaimerContainer = styled.div`
+  background: #f8fff6;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  padding: 32px;
+  max-width: 700px;
+`;
+const DisclaimerHeader = styled.div`
+  font-family: Bau-Medium;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #231f20;
+`;
+
+const DisclaimerText = styled.div`
+  font-family: TiemposText-Regular;
+  font-size: 16px;
+  color: #231f20;
+  margin-top: 16px;
+  line-height: 24px;
+`;
+
+const SubmitButton = styled.div`
+  margin-top: 32px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e5a698;
+  border: 1px solid #000000;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-family: Bau-Medium;
+  font-size: 12px;
+  text-transform: uppercase;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+`;
+
+const Checkbox = styled.div`
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000;
+  margin-left: 8px;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
 `;
 
 export default Help;
