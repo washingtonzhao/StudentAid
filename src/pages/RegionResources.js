@@ -32,7 +32,7 @@ export const RegionResources = ({ region, regionId, history }) => {
       </SelectedSubHeader>
       {formattedData.map(([subRegion, resources], i) => (
         <>
-          <RegionBoxHeader>{_.startCase(_.toLower(subRegion))}</RegionBoxHeader>
+          <RegionBoxHeader>{subRegion}</RegionBoxHeader>
           <RegionSection>
             {resources.map(({ name, url }) => (
               <div style={{ marginTop: 16 }}>
@@ -63,7 +63,7 @@ export const RegionResources = ({ region, regionId, history }) => {
 
 export default RegionResources;
 
-export const DesktopRegionResources = ({ regionId }) => {
+export const DesktopRegionResources = ({ regionId, setRegion }) => {
   const [resources, Loading, error] = useRequest(() =>
     getRegionResources(regionId)
   );
@@ -74,25 +74,48 @@ export const DesktopRegionResources = ({ regionId }) => {
   const formattedData = _.toPairs(resources);
 
   return (
-    <RegionSection>
-      <Header>You're not alone.</Header>
-      {formattedData.map(([subRegion, resources], i) => (
-        <ResourceCard>
-          <ResourceCardHeader>
-            {_.startCase(_.toLower(subRegion))}
-          </ResourceCardHeader>
-          {resources.map(({ name, url }) => (
-            <div style={{ marginTop: 16 }}>
-              <ResourceLink href={url} target="_blank">
-                {formatResource(name)}
-              </ResourceLink>
-            </div>
-          ))}
-        </ResourceCard>
-      ))}
-    </RegionSection>
+    <>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <ReturnButton onClick={() => setRegion("default")}>
+          Return to map
+        </ReturnButton>
+      </div>
+      <RegionSection>
+        <Header>You're not alone.</Header>
+        {formattedData.map(([subRegion, resources], i) => (
+          <ResourceCard>
+            <ResourceCardHeader>{subRegion}</ResourceCardHeader>
+            {resources.map(({ name, url }) => (
+              <div style={{ marginTop: 16 }}>
+                <ResourceLink href={url} target="_blank">
+                  {formatResource(name)}
+                </ResourceLink>
+              </div>
+            ))}
+          </ResourceCard>
+        ))}
+      </RegionSection>
+    </>
   );
 };
+
+const ReturnButton = styled.div`
+  background: #e5a698;
+  border: 1px solid #000000;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-family: Bau-Medium;
+  font-size: 12px;
+  text-transform: uppercase;
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+`;
 
 const RegionResourcesContainer = styled.div`
   margin-top: 32px;
@@ -193,6 +216,31 @@ const ResourceCardHeader = styled.div`
   font-family: TiemposHeadline-Medium;
   font=size: 24px;
 `;
+
+const wordsNotCapitalizedInTitles = [
+  "a",
+  "an",
+  "the",
+  "for",
+  "and",
+  "nor",
+  "but",
+  "or",
+  "yet",
+  "so",
+  "at",
+  "around",
+  "by",
+  "after",
+  "along",
+  "for",
+  "from",
+  "of",
+  "on",
+  "to",
+  "with",
+  "without",
+];
 
 /*
 const RegionCardsContainer = styled.div`

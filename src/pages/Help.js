@@ -135,7 +135,10 @@ const RegionBox = ({
             style={{ position: "absolute", bottom: 54, right: -56, width: 154 }}
           />
 
-          <DesktopRegionResources regionId={getRegionId(region)} />
+          <DesktopRegionResources
+            regionId={getRegionId(region)}
+            setRegion={setRegion}
+          />
         </RegionBoxContentWrapper>
       </RegionBoxWrapper>
     );
