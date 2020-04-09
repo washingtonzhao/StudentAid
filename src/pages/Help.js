@@ -54,8 +54,10 @@ const Disclaimer = ({ setIsOpen }) => {
   const [firstCondition, setFirstCondition] = useState(false);
   const [secondCondition, setSecondCondition] = useState(false);
 
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   return (
-    <DisclaimerContainer>
+    <DisclaimerContainer isMobile={isMobile}>
       <DisclaimerHeader>Agreements</DisclaimerHeader>
       <DisclaimerText>
         I agree that I will reach out to my community’s network to provide or
@@ -439,8 +441,9 @@ const DisclaimerContainer = styled.div`
   box-sizing: border-box;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   border-radius: 1px;
-  padding: 32px;
+  padding: ${({ isMobile }) => (isMobile ? "16px" : "32px")};
   max-width: 700px;
+  font-size: ${({ isMobile }) => (isMobile ? "14px" : "16px")};
 `;
 const DisclaimerHeader = styled.div`
   font-family: Bau-Medium;
@@ -451,7 +454,7 @@ const DisclaimerHeader = styled.div`
 
 const DisclaimerText = styled.div`
   font-family: TiemposText-Regular;
-  font-size: 16px;
+
   color: #231f20;
   margin-top: 16px;
   line-height: 24px;
