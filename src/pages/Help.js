@@ -21,17 +21,18 @@ export const Help = ({ history }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   if (error) return <div>WHOOPS SOMETHING BBAD HAPENED</div>;
-
   return (
     <ContentWrapper>
-      <Modal
-        isOpen={isOpen}
-        style={{
-          overlay: { zIndex: 1000 },
-        }}
-      >
-        <Disclaimer setIsOpen={setIsOpen} />
-      </Modal>
+      {!localStorage.getItem("agreement") && (
+        <Modal
+          isOpen={isOpen}
+          style={{
+            overlay: { zIndex: 1000 },
+          }}
+        >
+          <Disclaimer setIsOpen={setIsOpen} />
+        </Modal>
+      )}
       <SurvivalBox
         region={region}
         setRegion={setRegion}
@@ -93,7 +94,12 @@ const Disclaimer = ({ setIsOpen }) => {
         </div>
       </div>
       <SubmitButton
-        onClick={() => firstCondition && secondCondition && setIsOpen(false)}
+        onClick={() => {
+          if (firstCondition && secondCondition) {
+            setIsOpen(false);
+            localStorage.setItem("agreement", JSON.stringify(true));
+          }
+        }}
       >
         Submit
       </SubmitButton>

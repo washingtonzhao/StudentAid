@@ -39,7 +39,7 @@ export const NavBar = () => {
                 activeStyle={{ borderBottom: "1px dotted black" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get Help
+                Find Resources
               </NavOption>
               <NavOption
                 to={"/contribute"}
