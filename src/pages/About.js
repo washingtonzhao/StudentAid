@@ -28,20 +28,19 @@ export const About = () => {
           <>
             <SectionHeader isFirst={!isMobile}>What is this?</SectionHeader>
             <SectionBody>
-              After USC made classes remote for March, a few members of Spark SC
-              spun up an emergency committee to centralize resources for
-              students who have been displaced by the fallout from COVID-19.
-              This hybrid committee included members of other student
-              organizations and even members of other colleges.
+              After USC made classes remote for March, a few students spun up an
+              emergency committee to centralize resources for students who have
+              been displaced by the fallout from COVID-19. This hybrid committee
+              includes members of various student organizations and colleges.
             </SectionBody>
           </>
         )}
         <SectionHeader isFirst={isMobile}>Credits</SectionHeader>
         <SectionBody>
-          Neither Spark SC nor USC take credit for the incredible work done by
-          the university students who made original Mutual Aid spreadsheets and
-          shared them as templates with other schools (Wesleyan, University of
-          Michigan, and Tufts, to name a few).
+          This incredible work is done by the university students who made the
+          original Mutual Aid spreadsheets and shared them as templates with
+          other schools (Wesleyan, University of Michigan, and Tufts, to name a
+          few).
         </SectionBody>
         {/* <SectionHeader>Creative Contributors</SectionHeader>
         <ContributorsBox>

@@ -136,14 +136,14 @@ const SurvivalBox = ({
       isMobile={isMobile}
       style={{ background: region === "default" ? "#e5a698" : "#F8FFF6" }}
     >
-      {isMobile && (
+      {/* {isMobile && (
         <Outdoors
           style={{ position: "absolute", top: -99 / 2, right: -99 / 2 }}
         />
       )}
       <SpinningSmile
         style={{ position: "absolute", bottom: -54 / 2, right: -54 / 2 }}
-      />
+      /> */}
       <CloseButton onClick={() => setSurvivalBoxIsOpen(false)} />
       {region === "default" && (
         <>
@@ -240,14 +240,14 @@ const RegionBox = ({
         survivalBoxIsOpen={survivalBoxIsOpen}
         isMobile={isMobile}
       >
-        {isMobile && (
+        {/* {isMobile && (
           <Fine style={{ position: "absolute", bottom: -83 / 2, left: 0 }} />
         )}
         {!isMobile && (
           <FineDesktop
             style={{ position: "absolute", bottom: 54, right: -56, width: 154 }}
           />
-        )}
+        )} */}
         <div
           style={isMobile ? {} : { display: "flex", justifyContent: "center" }}
         >
@@ -506,7 +506,7 @@ export default Help;
 const HelpMobileLoadingState = () => (
   <RegionBoxWrapper>
     <RegionBoxContentWrapper style={{ height: 1000 }}>
-      <Fine style={{ position: "absolute", bottom: -83 / 2, left: 0 }} />
+      {/* <Fine style={{ position: "absolute", bottom: -83 / 2, left: 0 }} /> */}
       <RegionBoxContent>
         <RegionBoxHeader>
           CLICK ON A REGION TO SEE LOCAL RESOURCES
@@ -537,9 +537,9 @@ const HelpLoadingState = () => (
     />
 
     <RegionBoxContentWrapper style={{ paddingTop: 120 }}>
-      <FineDesktop
+      {/* <FineDesktop
         style={{ position: "absolute", bottom: 54, right: -56, width: 154 }}
-      />
+      /> */}
 
       <div style={{ display: "flex", justifyContent: "center" }}>
         <RegionBoxContent>
