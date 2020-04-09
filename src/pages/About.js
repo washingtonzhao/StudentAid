@@ -65,6 +65,9 @@ export const About = () => {
             Content
           </ContributorText>
           <ContributorText>
+            <ContributorName>Steve Nguyen</ContributorName> – Resource Lead
+          </ContributorText>
+          <ContributorText>
             <ContributorName>Ada Toydemir</ContributorName> – Web Developer
           </ContributorText>
           <ContributorText>
