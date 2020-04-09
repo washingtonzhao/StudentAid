@@ -68,7 +68,7 @@ export const About = () => {
             <ContributorName>Steve Nguyen</ContributorName> – Resource Lead
           </ContributorText>
           <ContributorText>
-            <ContributorName>Ada Toydemir</ContributorName> – Web Developer
+            <ContributorName>Haeju Jeong</ContributorName> – Web Developer
           </ContributorText>
           <ContributorText>
             <ContributorName>Joel Yoon</ContributorName> – Motion Graphics
