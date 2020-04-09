@@ -43,7 +43,7 @@ export const About = () => {
           shared them as templates with other schools (Wesleyan, University of
           Michigan, and Tufts, to name a few).
         </SectionBody>
-        <SectionHeader>Creative Contributors</SectionHeader>
+        {/* <SectionHeader>Creative Contributors</SectionHeader>
         <ContributorsBox>
           <ContributorText>
             <ContributorName>Gitika Pahwa</ContributorName> – Project Lead
@@ -76,7 +76,7 @@ export const About = () => {
           <ContributorText>
             <ContributorName>Andrew Hulin</ContributorName> – Social Strategy
           </ContributorText>
-        </ContributorsBox>
+        </ContributorsBox> */}
         <SectionHeader>Tech Stack</SectionHeader>
         <SectionBody>
           Coronavirus Stinks is a website developed in a JavaScript library

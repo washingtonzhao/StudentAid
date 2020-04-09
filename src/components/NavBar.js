@@ -90,7 +90,7 @@ export const NavBar = () => {
             </NavOption>
             <NavOption to={"/help"}>
               <NavOptionWrapper active={location.pathname === "/help"}>
-                Get Help
+                Find Resources
               </NavOptionWrapper>
             </NavOption>
             <NavOption to={"/contribute"}>
