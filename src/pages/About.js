@@ -28,10 +28,11 @@ export const About = () => {
           <>
             <SectionHeader isFirst={!isMobile}>What is this?</SectionHeader>
             <SectionBody>
-              After USC made classes remote for March, a few students spun up an
-              emergency committee to centralize resources for students who have
-              been displaced by the fallout from COVID-19. This hybrid committee
-              includes members of various student organizations and colleges.
+              After colleges across the nation made classes remote for March, a
+              few students spun up an emergency committee to centralize
+              resources for students who have been displaced by the fallout from
+              COVID-19. This hybrid committee includes members of various
+              student organizations and colleges.
             </SectionBody>
           </>
         )}
