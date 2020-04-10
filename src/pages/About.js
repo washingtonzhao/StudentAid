@@ -84,13 +84,13 @@ export const About = () => {
           called MongoDB.
           <br />
           <br />
-          Our team uses Slack and Notion — shoutout to the Notion Community Team
-          for their help and support!
+          {/* Our team uses Slack and Notion — shoutout to the Notion Community Team
+          for their help and support! */}
         </SectionBody>
-        <SectionHeader>Design System</SectionHeader>
+        {/* <SectionHeader>Design System</SectionHeader>
         <SectionBody>
           Fonts in use are Tiempos Headline, Tiempos Text, and Bau.
-        </SectionBody>
+        </SectionBody> */}
       </SectionsWrapper>
     </ContentWrapper>
   );
