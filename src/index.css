@@ -62,3 +62,13 @@ code {
   font-style: normal;
   src: url(./assets/fonts/TiemposText-Bold.otf) format("opentype");
 }
+@font-face {
+  font-family: "SF Pro";
+  font-style: bold;
+  src: url(./assets/fonts/SF-Pro-Display-Bold.otf) format("opentype");
+}
+@font-face {
+  font-family: "SF Pro";
+  font-style: normal;
+  src: url(./assets/fonts/SF-Pro-Display-Regular.otf) format("opentype");
+}

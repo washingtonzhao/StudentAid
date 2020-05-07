@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import { ReactComponent as Close } from "../assets/svg/close.svg";
+import { ReactComponent as Logo } from "../assets/svg/Logo.svg";
 
 export const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ export const NavBar = () => {
       {isMobile && (
         <>
           <NavOption to={"/"} isActive={(_, { pathname }) => pathname === "/"}>
-            <Logo>CORONAVIRUS STINKS</Logo>
+            <Logo style={{ width: 184, height: "auto", marginLeft: -10 }} />
           </NavOption>
           <MenuWrapper>
             <MenuButton
@@ -25,21 +26,22 @@ export const NavBar = () => {
             </MenuButton>
             <MenuContainer className={!isMenuOpen ? "hidden" : ""}>
               <CloseButton onClick={() => setIsMenuOpen(false)} />
+
               <NavOption
-                to={"/"}
-                isActive={(_, { pathname }) => pathname === "/"}
+                to={"/discover"}
+                isActive={(_, { pathname }) => pathname === "/discover"}
                 activeStyle={{ borderBottom: "1px dotted black" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                Discover
               </NavOption>
               <NavOption
-                to={"/help"}
-                isActive={(_, { pathname }) => pathname === "/help"}
+                to={"/empathize"}
+                isActive={(_, { pathname }) => pathname === "/empathize"}
                 activeStyle={{ borderBottom: "1px dotted black" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Find Resources
+                Empathize
               </NavOption>
               <NavOption
                 to={"/contribute"}
@@ -64,33 +66,17 @@ export const NavBar = () => {
       {!isMobile && (
         <>
           <NavOption to={"/"} isActive={(_, { pathname }) => pathname === "/"}>
-            <Logo
-              style={{
-                fontSize: 24,
-                padding: 24,
-              }}
-            >
-              CORONAVIRUS STINKS
-              <div
-                style={{
-                  fontFamily: "TiemposText-Italic",
-                  fontSize: 14,
-                  marginTop: 8,
-                }}
-              >
-                – but it doesn't have to get the best of us.
-              </div>
-            </Logo>
+            <Logo style={{ height: 120, width: "auto", marginLeft: -24 }} />
           </NavOption>
           <NavOptionsContainer>
-            <NavOption to={"/"}>
-              <NavOptionWrapper active={location.pathname === "/"}>
-                Home
+            <NavOption to={"/discover"}>
+              <NavOptionWrapper active={location.pathname === "/discover"}>
+                Discover
               </NavOptionWrapper>
             </NavOption>
-            <NavOption to={"/help"}>
-              <NavOptionWrapper active={location.pathname === "/help"}>
-                Find Resources
+            <NavOption to={"/empathize"}>
+              <NavOptionWrapper active={location.pathname === "/empathize"}>
+                Empathize
               </NavOptionWrapper>
             </NavOption>
             <NavOption to={"/contribute"}>
@@ -121,19 +107,6 @@ const NavBarWrapper = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.div`
-  width: auto;
-  height: auto;
-  padding: 12px;
-  background-color: #cff4c9;
-  font-size: 14px;
-  border: 1px solid #000000;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  display: flex;
-  flex-direction: column;
-  font-family: Bau-Bold;
-`;
 const MenuWrapper = styled.div`
   position: relative;
 `;
